@@ -1,0 +1,245 @@
+[
+  {
+    "layer": "GAIA_ANALYSIS",
+    "role": "DefinePrototypes",
+    "input_tokens": 1146,
+    "output_tokens": 1049,
+    "total_tokens": 2195,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_ANALYSIS",
+    "role": "CriticPrototypes",
+    "input_tokens": 1703,
+    "output_tokens": 464,
+    "total_tokens": 2167,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_ANALYSIS",
+    "role": "DefinePrototypes",
+    "input_tokens": 2368,
+    "output_tokens": 1079,
+    "total_tokens": 3447,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_ANALYSIS",
+    "role": "CriticPrototypes",
+    "input_tokens": 1735,
+    "output_tokens": 521,
+    "total_tokens": 2256,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_ANALYSIS",
+    "role": "DefineRoles",
+    "input_tokens": 3646,
+    "output_tokens": 1161,
+    "total_tokens": 4807,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_ANALYSIS",
+    "role": "CriticRoles",
+    "input_tokens": 2928,
+    "output_tokens": 14,
+    "total_tokens": 2942,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineAgents",
+    "input_tokens": 4215,
+    "output_tokens": 165,
+    "total_tokens": 4380,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticAgents",
+    "input_tokens": 2199,
+    "output_tokens": 14,
+    "total_tokens": 2213,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineService",
+    "input_tokens": 2604,
+    "output_tokens": 1127,
+    "total_tokens": 3731,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticService",
+    "input_tokens": 2969,
+    "output_tokens": 555,
+    "total_tokens": 3524,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineService",
+    "input_tokens": 4157,
+    "output_tokens": 1054,
+    "total_tokens": 5211,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticService",
+    "input_tokens": 2926,
+    "output_tokens": 596,
+    "total_tokens": 3522,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineService",
+    "input_tokens": 4090,
+    "output_tokens": 1127,
+    "total_tokens": 5217,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticService",
+    "input_tokens": 2976,
+    "output_tokens": 658,
+    "total_tokens": 3634,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineService",
+    "input_tokens": 4227,
+    "output_tokens": 1135,
+    "total_tokens": 5362,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticService",
+    "input_tokens": 2984,
+    "output_tokens": 531,
+    "total_tokens": 3515,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineService",
+    "input_tokens": 4146,
+    "output_tokens": 1138,
+    "total_tokens": 5284,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineAcquaintance",
+    "input_tokens": 3284,
+    "output_tokens": 177,
+    "total_tokens": 3461,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticAcquaintance",
+    "input_tokens": 3225,
+    "output_tokens": 556,
+    "total_tokens": 3781,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineAcquaintance",
+    "input_tokens": 3913,
+    "output_tokens": 211,
+    "total_tokens": 4124,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticAcquaintance",
+    "input_tokens": 3243,
+    "output_tokens": 614,
+    "total_tokens": 3857,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineAcquaintance",
+    "input_tokens": 3864,
+    "output_tokens": 211,
+    "total_tokens": 4075,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticAcquaintance",
+    "input_tokens": 3243,
+    "output_tokens": 804,
+    "total_tokens": 4047,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineAcquaintance",
+    "input_tokens": 4189,
+    "output_tokens": 211,
+    "total_tokens": 4400,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "CriticAcquaintance",
+    "input_tokens": 3243,
+    "output_tokens": 660,
+    "total_tokens": 3903,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "GAIA_DESIGN",
+    "role": "DefineAcquaintance",
+    "input_tokens": 3883,
+    "output_tokens": 211,
+    "total_tokens": 4094,
+    "model": "mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "ollama"
+  },
+  {
+    "layer": "IMPLEMENTATION",
+    "role": "agent",
+    "input_tokens": 2417622,
+    "output_tokens": 13183,
+    "total_tokens": 2430805,
+    "model": "ollama/mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "unknown"
+  }
+]

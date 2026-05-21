@@ -1,0 +1,20 @@
+[
+  {
+    "id": "7",
+    "title": "HealthWise",
+    "repo": "https://github.com/milosz-l/HealthWise.git",
+    "description": "Projekt zakłada opracowanie zintegrowanej platformy, która umożliwi: 1. Łatwe zgłaszanie objawów: Użytkownicy będą mogli przesyłać informacje o swoich objawach za pośrednictwem intuicyjnego interfejsu obsługiwanego za pomocą języka naturalnego. Umożliwi to szybkie przeprowadzenie wstępnej oceny medycznej bez potrzeby bezpośredniego kontaktu z placówkami zdrowia, co zredukuje obciążenie systemu opieki zdrowotnej. 2. Gromadzenie i analiza danych zdrowotnych: Dane zebrane od użytkowników będą przechowywane i analizowane w czasie rzeczywistym, co pozwoli na identyfikację oraz śledzenie wzorców zachorowań w różnych lokalizacjach. 3. Wsparcie dla służb zdrowia: System zapewni cenne informacje instytucjom medycznym i badaczom, ułatwiając monitorowanie sytuacji epidemiologicznej oraz wspieranie decyzji dotyczących zarządzania zdrowiem publicznym. 4. Informacje zwrotne i rekomendacje: Użytkownicy otrzymają rekomendacje dotyczące dalszych kroków, np. czy powinni skonsultować się ze specjalistą, oraz informacje na temat lokalnych placówek medycznych. Dzięki temu rozwiązaniu możliwe jest nie tylko usprawnienie indywidualnego zarządzania zdrowiem użytkowników, ale także wsparcie służb medycznych w reagowaniu na sytuacje kryzysowe związane z chorobami zakaźnymi. W rezultacie proponowany system stanowi istotny wkład w poprawę zdrowia publicznego i bezpieczeństwa epidemiologicznego.",
+    "requirements": [
+      "Zgłaszanie objawów: System powinien umożliwiać użytkownikom zgłaszanie objawów za pomocą intuicyjnego interfejsu.",
+      "Analiza danych zdrowotnych: System musi gromadzić i analizować dane w czasie rzeczywistym.",
+      "Wsparcie dla służb zdrowia: System powinien dostarczać informacji instytucjom medycznym i badaczom.",
+      "Rekomendacje dla użytkowników: System powinien oferować użytkownikom rekomendacje dotyczące dalszych kroków.",
+      "Skalowalność: System musi być w stanie obsłużyć dużą liczbę użytkowników jednocześnie.",
+      "Bezpieczeństwo: Dane użytkowników muszą być chronione zgodnie z obowiązującymi przepisami o ochronie danych.",
+      "Dostępność: System powinien być dostępny 24/7.",
+      "Użyteczność: Interfejs użytkownika powinien być prosty i intuicyjny.",
+      "Integracja z LLM: System powinien wykorzystywać duże modele językowe do analizy i przetwarzania danych.",
+      "Architektura wieloagentowa: System powinien być zbudowany w oparciu o architekturę wieloagentową, aby efektywnie rozdzielać zadania."
+    ]
+  }
+]

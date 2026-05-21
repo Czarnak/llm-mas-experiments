@@ -1,0 +1,4 @@
+spade==4.3.0
+asyncio
+aiohttp
+pydantic

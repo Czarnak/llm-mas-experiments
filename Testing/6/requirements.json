@@ -1,0 +1,19 @@
+[
+  {
+    "id": "6",
+    "title": "kraken",
+    "repo": "https://github.com/kn-kraken/aasd-kraken.git",
+    "description": "Proponowane rozwiązanie zakłada wykorzystanie systemu agentowego, który ma na celu poprawę dopasowania lokali usługowych do potrzeb lokalnych społeczności, wspierając realizację koncepcji „miasta 15-minutowego”. System ten  składa się z autonomicznych agentów, którzy reprezentują różne podmioty: właścicieli lokali do wynajęcia, potencjalnych najemców, lokalnych mieszkańców oraz jednostki agregujące dane o lokalach w danej lokalizacji. Dzięki temu możliwe jest optymalne rozmieszczenie usług, co przyczynia się do wzmacniania lokalnych społeczności oraz zwiększenia efektywności rynku wynajmu lokali.",
+    "requirements": [
+      "System umożliwia parowanie lokali z biznesami poprzez aukcje, parowanie na podstawie (z zachowaniem koncepcji miasta 15-minutowego). Istotne czynniki parowania stanowią:• cena,• lokalizacja,• rozmiar,• typ działalności.",
+      "System umożliwia po sparowaniu akceptację lub odrzucenie dobranej pary przez biznes lub lokal",
+      "System umożliwia dodanie lokalu do giełdy",
+      "System umożliwia usuwanie lokalu z giełdy.",
+      "System umożliwia złożenie zapotrzebowania na lokal przez biznes.",
+      "System umożliwia podanie górnej i dolnej granicy dla kryteriów parowania.",
+      "System powinien umożliwiać złożenie zapotrzebowania na usługę przez mieszkańca",
+      "System powinien umożliwiać wycofanie oferty przez lokal",
+      "System mógłby umożliwiać wycofanie zapotrzebowania na usługę przez mieszkańca."
+    ]
+  }
+]

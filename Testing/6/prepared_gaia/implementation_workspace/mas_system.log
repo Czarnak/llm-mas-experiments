@@ -1,0 +1,6 @@
+2026-05-20 18:40:09,328 - mas_system.utils.logger - INFO - SYSTEM EVENT: Sending Premise Offer - Details: Sending offer for unknown
+2026-05-20 18:40:22,637 - mas_system.utils.logger - INFO - SYSTEM EVENT: Sending Premise Offer - Details: Sending offer for unknown
+2026-05-20 18:40:22,637 - mas_system.utils.logger - INFO - SYSTEM EVENT: Sending Tenant Offer - Details: Sending offer for unknown to unknown
+2026-05-20 18:40:22,637 - mas_system.utils.logger - INFO - SYSTEM EVENT: Processing Matches
+2026-05-20 18:40:22,637 - mas_system.utils.logger - INFO - SYSTEM EVENT: Canceling Premise Offer
+2026-05-20 18:40:22,637 - mas_system.utils.logger - INFO - SYSTEM EVENT: Withdrawing Service Demand

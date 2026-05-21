@@ -1,0 +1,16 @@
+[
+  {
+    "id": "3",
+    "title": "Opieka i nadzór nad zwierzętami",
+    "repo": "https://gitlab-stud.elka.pw.edu.pl/pniewier/psiagent.git",
+    "description": "Właściciele zwierząt domowych, ze szczególnym uwzględnieniem psów, na co dzień zmagają się z licznymi obowiązkami profilaktycznymi i opiekuńczymi, takimi jak szczepienia, odrobaczanie czy ochrona przeciwpasożytnicza. Wielość tych zadań sprawia, że opiekunowie często gubią się w harmonogramach. Poważnym wyzwaniem jest również trudność w prawidłowym rozpoznawaniu sygnałów świadczących o pogorszeniu samopoczucia lub chorobie pupila. Brak stałego monitoringu stanu i zachowania zwierzęcia, zwłaszcza podczas nieobecności właściciela w domu, prowadzi do niepokoju i opóźnień w reakcji na potencjalne zagrożenia zdrowotne. Ponadto trudności w interpretacji objawów skutkują skrajnymi postawami: bagatelizowaniem problemów z powodu braku świadomości lub nadmiernymi wizytami u weterynarza, co generuje nieuzasadnione koszty i niepotrzebnie obciąża kliniki weterynaryjne.",
+    "requirements": [
+      "Pomiar funkcji życiowych zwierzaka",
+      "Zapisywanie położenia zwierzaka",
+      "Kontrola zachowania zwierzaka",
+      "Monitorowanie stanu zdrowia",
+      "Przypominanie o wizytach u weterynarza",
+      "Umawianie wizyt u weterynarza"
+    ]
+  }
+]

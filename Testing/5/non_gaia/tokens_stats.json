@@ -1,0 +1,11 @@
+[
+  {
+    "layer": "IMPLEMENTATION",
+    "role": "agent",
+    "input_tokens": 1210484,
+    "output_tokens": 16886,
+    "total_tokens": 1227370,
+    "model": "ollama/mdq100/Qwen3-Coder-30B-A3B-Instruct:30b",
+    "model_provider": "unknown"
+  }
+]

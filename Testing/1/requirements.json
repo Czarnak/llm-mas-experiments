@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "title": "System zarządzania schroniskiem dla zwierząt",
+    "repo": "https://github.com/kenjakendi/AASD-MAJ.git",
+    "description": "Schroniska dla zwierząt mierzą się z wyzwaniem zapewnienia stałej, adekwatnej opieki dużej liczby podopiecznych mając jednocześnie mocno ograniczone zasoby ludzkie jak i finansowe. Ośrodki te realizują cykliczne, powtarzalne czynności, które bezpośrednio wpływają na dobrostan zwierząt. Do wspomnianych czynności zaliczamy na przykład:● karmienie zwierząt● sprzątanie pomieszczeń● szczepienie zwierząt● wyprowadzanie zwierząt● przyjęcia zwierząt● adopcje zwierzątWyzwanie polega na jednoczesnym zapewnieniu wysokiej jakości opieki codziennej oraz płynnym prowadzeniu przyjęć/adopcji, przy ograniczonej liczbie lub umiejętności opiekunów, lub wolontariuszy, niestabilnej dostępności i wielu zależnościach.",
+    "requirements": [
+      "Rejestr zwierząt - system zapewnia prowadzenie cyfrowej ewidencji zwierząt z możliwością dodawania, edycji oraz śledzenia stanów zdrowia, statusów (np. \"nakarmiony\", \"na spacerze\") i historii zdarzeń.",
+      "Rejestr pracowników i ról - system zapewnia możliwość zarządzania kontami i rolami pracowników (opiekun, sprzątacz, weterynarz) wraz z przypisaniem kompetencji, limitów i preferencji.",
+      "Dostępność personelu - system umożliwia zgłaszanie i aktualizowanie slotów dostępności przez pracowników.",
+      "Generowanie zadań opieki - system automatycznie generuje zadania takie jak karmienie, spacery, szczepienie czy sprzątanie (cyklicznie lub na żądanie).",
+      "Automatyczny przydział zadań - system zapewnia automatyczne dopasowanie zadań do dostępnych pracowników na podstawie ich kompetencji, preferencji i aktualnego obciążenia.",
+      "Monitorowanie cyklu życia zadania - system umożliwia śledzenie pełnego cyklu życia zadania oraz potwierdzanie wykonania przez pracowników.",
+      "Kalendarz szczepień - system automatycznie planuje i monitoruje okna szczepień oraz generuje odpowiednie zadania dla personelu.",
+      "Sprzątanie pomieszczeń - system automatycznie generuje zadania sprzątania dziennego i na żądanie na podstawie stanu pomieszczeń.",
+      "Przyjęcia zwierząt - system zapewnia proces rejestracji nowych zwierząt, przeprowadzenie badań wstępnych oraz włączenie ich do harmonogramu opieki.",
+      "Priorytetyzacja zadań - system automatycznie rozróżnia zadania krytyczne od rutynowych i dynamicznie aktualizuje priorytety w zależności od sytuacji.",
+      "Sprawiedliwa rotacja opieki - system zapewnia mechanizm równomiernego rozdziału zadań między zwierzęta i opiekunów, dbając o sprawiedliwą rotację.",
+      "Obsługa nagłych zdarzeń - system zapewnia natychmiastową rekonfigurację planu w przypadku nagłych zdarzeń, takich jak przyjęcie nowego zwierzęcia lub nieobecność wolontariusza.",
+      "Wsparcie procesu adopcyjnego - system prowadzi proces adopcji, od złożenia wniosku po finalizację adopcji."
+    ]
+  }
+]

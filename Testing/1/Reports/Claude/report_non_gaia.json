@@ -1,0 +1,129 @@
+{
+  "variant": "non_gaia",
+  "summary": "A Python multi-agent shelter management system built on the crewAI framework with 11 specialised agent classes and a file-based JSON database. All 13 requirements have at least partial coverage at the design level; however, the system cannot execute as written due to multiple critical defects: (1) crewAI Agent.__init__ does not accept arbitrary keyword arguments, so passing database=database in every agent constructor will raise a TypeError at startup; (2) Database.__init__ creates only the root directory — none of the seven required subdirectories are created, causing FileNotFoundError on first read or write of any entity; (3) Database entirely omits get_all_task_assignments() and get_all_vaccination_schedules(), which are called by four agents at runtime, resulting in AttributeError. Together these three defects prevent the system from initialising or running at all. Beyond runnability, there are notable logic bugs (update_animal() records wrong old_value in history; adopt approve_application() records identical old/new status), a priority-level mismatch between the Task model and PriorityAgent, and TYPE_CHECKING-guarded imports that cause NameError when TaskAssignment is constructed at runtime.",
+  "recommendation": "fail",
+  "scores": {
+    "requirements_fit": 7,
+    "logical_consistency": 5,
+    "component_coverage": 8,
+    "interface_logic": 4,
+    "implementation_alignment": 5,
+    "overall": 6
+  },
+  "findings": [
+    {
+      "category": "Critical — Framework Misuse",
+      "severity": "critical",
+      "description": "Every agent passes database=database as a keyword argument to crewAI Agent.__init__(). crewAI Agent inherits from Pydantic BaseModel and does not declare a 'database' field; Pydantic will raise a TypeError (extra fields not allowed) at instantiation, preventing the entire system from starting.",
+      "evidence": "All 11 agent files (e.g. animal_registry_agent.py line 18, task_assignment_agent.py line 20): super().__init__(role=..., database=database). crewai>=0.20.0 uses strict Pydantic v2 validation. self.database is then referenced throughout every agent method — these calls will also raise AttributeError even if TypeError were somehow bypassed."
+    },
+    {
+      "category": "Critical — Missing Database Methods",
+      "severity": "critical",
+      "description": "Database.get_all_task_assignments() and Database.get_all_vaccination_schedules() are called by four agents but are never defined in utils/database.py. Every call raises AttributeError at runtime.",
+      "evidence": "Callers: task_assignment_agent.py line 167, rotation_agent.py lines 31/91/109, emergency_agent.py line 102 (get_all_task_assignments); calendar_agent.py lines 55/69 (get_all_vaccination_schedules). Confirmed absent from utils/database.py."
+    },
+    {
+      "category": "Critical — Missing Directory Initialisation",
+      "severity": "critical",
+      "description": "Database.__init__() calls os.makedirs(db_path) for the root 'data' directory only. None of the seven required subdirectories (animals/, staff/, tasks/, cleaning_tasks/, adoption_processes/, emergencies/, vaccination_schedules/, task_assignments/) are created. Every save_*() and get_all_*() call that touches those paths raises FileNotFoundError on a fresh installation.",
+      "evidence": "utils/database.py line 8-10: __init__ only creates db_path. Lines 13, 26, 34, 47, 55, 68, 76, 89, 97, 110, 118, 131, 139, 151 all reference subdirectories that are never created."
+    },
+    {
+      "category": "Critical — Runtime NameError (TYPE_CHECKING import guard)",
+      "severity": "critical",
+      "description": "task_assignment_agent.py imports Task, TaskAssignment, StaffMember under 'if TYPE_CHECKING:' only. At runtime these names are not in scope. Line 62 constructs TaskAssignment(...) directly, raising NameError. rotation_agent.py uses the same pattern.",
+      "evidence": "task_assignment_agent.py lines 6-7: 'if TYPE_CHECKING: from models.animal_model import Task, TaskAssignment, StaffMember'. Line 62: 'assignment = TaskAssignment(task_id=task.id, ...)' — NameError at runtime. rotation_agent.py lines 6-7 same guard."
+    },
+    {
+      "category": "High — Logic Bug: update_animal history records wrong values",
+      "severity": "high",
+      "description": "In AnimalRegistryAgent.update_animal(), the history entry is built OUTSIDE the for-loop using the last loop variable values, and old_value is read AFTER setattr — so it always equals the new value. Only the last updated field is recorded, and with incorrect old_value.",
+      "evidence": "animal_registry_agent.py lines 45-56: setattr(animal, key, value) is called inside the loop (line 47); history_entry is built after the loop (lines 50-55) using 'key'/'value' from the last iteration, and getattr(animal, key) returns the already-overwritten value."
+    },
+    {
+      "category": "High — Logic Bug: adoption approve_application records identical old/new status",
+      "severity": "high",
+      "description": "AdoptionAgent.approve_application() sets animal.status = 'w_adopcji' on line 55, then appends a history entry with old_value = animal.status on line 57 — which is already 'w_adopcji', making old_value == new_value. The same bug is repeated verbatim in finalize_adoption().",
+      "evidence": "adoption_agent.py lines 55-60: animal.status = 'w_adopcji'; animal.history.append({'old_value': animal.status, 'new_value': 'w_adopcji', ...}). Also lines 85-90 in finalize_adoption()."
+    },
+    {
+      "category": "High — Model/Agent Mismatch: undocumented priority level 'wysoka'",
+      "severity": "high",
+      "description": "The Task model documents only two priority values ('krytyczne', 'rutynowe'). PriorityAgent.calculate_task_priority() returns a third value 'wysoka' for deadlines between 2 and 12 hours. Any code branching on task.priority with the two documented values will silently ignore 'wysoka' tasks.",
+      "evidence": "models/animal_model.py Task.priority comment: '# \"krytyczne\", \"rutynowe\"'. agents/priority_agent.py lines ~30-35: 'elif time_until_deadline <= timedelta(hours=12): return \"wysoka\"'."
+    },
+    {
+      "category": "High — Logic Bug: PriorityAgent history entry is dead code",
+      "severity": "high",
+      "description": "PriorityAgent.update_task_priority() creates a history_entry dict but never appends it to any object. Task has no 'history' field, so there is nowhere to put it. The entry is silently discarded.",
+      "evidence": "agents/priority_agent.py: history_entry = {'field': 'priority', 'old_value': old_priority, 'new_value': new_priority, 'timestamp': ...} is created but never used — no append call follows."
+    },
+    {
+      "category": "High — Duplicate Logic: AdmissionAgent duplicates AnimalRegistryAgent",
+      "severity": "high",
+      "description": "AdmissionAgent.register_new_animal() is a near-identical copy of AnimalRegistryAgent.add_animal() with no delegation. EmergencyAgent creates Task objects directly instead of delegating to TaskGenerationAgent. This creates divergent code paths that can produce inconsistent animal records.",
+      "evidence": "admission_agent.py lines 14-38 vs animal_registry_agent.py lines 21-38 — same Animal construction pattern. emergency_agent.py creates Task objects directly (lines 37-57) without calling TaskGenerationAgent."
+    },
+    {
+      "category": "High — Null Dereference without Guard",
+      "severity": "high",
+      "description": "Multiple agent methods call database.get_animal() or database.get_staff() and immediately dereference the result without a None check. These return None on FileNotFoundError. At least 8 methods across 4 agents are affected.",
+      "evidence": "animal_registry_agent.py update_animal() line 42-47: animal = self.database.get_animal(animal_id) followed immediately by for-loop calling setattr(animal, ...) — crashes with AttributeError if animal is None. Same pattern in get_animal_status() (line 63), get_animal_health_status() (line 84), staff_management_agent.py update_staff_member(), add_competency(), remove_competency()."
+    },
+    {
+      "category": "Medium — Performance: repeated full-table disk scans",
+      "severity": "medium",
+      "description": "get_all_animals(), get_all_staff(), and get_all_tasks() each perform a full directory scan and JSON parse on every call. TaskAssignmentAgent.auto_assign_all_tasks() calls assign_task() per open task, each of which calls get_all_staff() — resulting in O(n_tasks × n_staff_files) disk reads.",
+      "evidence": "task_assignment_agent.py auto_assign_all_tasks() lines 148-159: for each task in open_tasks: assign_task(task.id) → get_all_staff() → os.listdir + json.load per file."
+    },
+    {
+      "category": "Medium — Missing task lifecycle completion confirmation",
+      "severity": "medium",
+      "description": "No method exists for staff to explicitly confirm task completion and trigger the 'zakonczone' status transition. Task.completed_at field is defined but never populated. CleaningAgent.update_cleaning_task_status() allows arbitrary status changes but is not wired to any staff-facing confirmation flow.",
+      "evidence": "models/animal_model.py Task.completed_at = None — never set in any agent. No 'complete_task' or 'confirm_completion' method found across all agents."
+    },
+    {
+      "category": "Medium — VaccinationSchedule: one record per animal overwrites previous",
+      "severity": "medium",
+      "description": "Database.save_vaccination_schedule() uses animal_id as the filename, so saving a second vaccine type for the same animal silently overwrites the first. Multi-vaccine animals cannot be tracked correctly.",
+      "evidence": "utils/database.py line 139: open(f\"{self.db_path}/vaccination_schedules/{schedule.animal_id}.json\", \"w\") — 'w' mode overwrites on same animal_id."
+    },
+    {
+      "category": "Medium — No cyclic task scheduler",
+      "severity": "medium",
+      "description": "Care tasks (feeding, walks, cleaning) must be triggered by explicit method calls; there is no background scheduler, cron, or event-driven loop. Tasks are one-shot and do not auto-recur, leaving REQ-4 (cyclic task generation) unautomated.",
+      "evidence": "task_generation_agent.py: generate_feeding_tasks(), generate_walk_tasks() each create a single Task with a 24h/12h deadline respectively. No scheduler setup visible in animal_shelter_system.py run_demo() or anywhere else."
+    },
+    {
+      "category": "Low — Debug print() statements in production code",
+      "severity": "low",
+      "description": "Numerous print() statements remain in animal_shelter_system.py and are executed at module import time (outside any function). These are not gated by a log level and will pollute production output.",
+      "evidence": "animal_shelter_system.py: print('Creating animal shelter management system...'), print('Data models created successfully.') — executed at module level on import, not inside run_demo()."
+    },
+    {
+      "category": "Low — Missing type hints on public API return values",
+      "severity": "low",
+      "description": "Database.get_all_* methods and several agent public methods lack return type annotations, reducing IDE and static-analysis support.",
+      "evidence": "utils/database.py: get_all_animals(), get_all_staff() etc. are typed as List[Animal] only on some; several agent public methods have no return annotation."
+    }
+  ],
+  "missing_requirements": [
+    "REQ-4 (cyclic task generation): Tasks are generated on explicit per-call basis only; no recurring scheduler or cron mechanism exists to auto-regenerate feeding/walk/cleaning tasks on a time cycle.",
+    "REQ-6 (task lifecycle — staff completion confirmation): No method allows staff to confirm task completion; Task.completed_at is defined but never populated; no 'zakonczone' transition is triggered by staff action."
+  ],
+  "logical_inconsistencies": [
+    "crewAI Agent subclassing is non-functional: agents extend crewai.Agent but pass database= as an extra Pydantic kwarg which is rejected at construction. The system operates as plain Python classes but incorrectly inherits from crewai.Agent without using any crewAI Agent capability (no tools attached, allow_delegation=False, no Crew/Task orchestration used in agent methods).",
+    "Task priority has a three-value enum in PriorityAgent ('krytyczne', 'wysoka', 'rutynowe') but the Task model documents only two values — any downstream code filtering by priority string will silently miss the 'wysoka' tier.",
+    "AdmissionAgent and AnimalRegistryAgent both create Animal records independently; an animal admitted via AdmissionAgent will not appear in AnimalRegistryAgent's registry unless both agents are explicitly called, creating potential dual records or missed records.",
+    "EmergencyAgent.handle_staff_unavailability_emergency() retrieves tasks assigned to the absent staff member and marks them for reassignment, but does not call TaskAssignmentAgent.auto_assign_all_tasks() — the reassignment loop is incomplete and open tasks remain unassigned unless the caller manually triggers the assignment agent.",
+    "Database stores only one VaccinationSchedule per animal (keyed by animal_id); CalendarAgent and TaskGenerationAgent both write schedules — multiple invocations overwrite each other, making vaccination tracking unreliable for any animal requiring more than one vaccine type."
+  ],
+  "implementation_risks": [
+    "System will not start at all due to three independent critical defects: (1) crewAI TypeError on Agent construction, (2) missing Database subdirectories causing FileNotFoundError on first save/read, (3) AttributeError on missing get_all_task_assignments and get_all_vaccination_schedules methods.",
+    "File-based JSON store with no transaction support means concurrent writes would corrupt entity files; no locking mechanism exists.",
+    "Null-dereference pattern (no None-guard after database.get_*()) is present in at least 10 agent methods; any attempt to operate on a non-existent entity ID will crash the calling method with an unhandled AttributeError.",
+    "TaskAssignment construction inside task_assignment_agent.py will raise NameError at runtime due to TYPE_CHECKING-only import, making the core task assignment workflow entirely non-operational even if the crewAI constructor issue were resolved.",
+    "No input validation on animal_data or staff_data dicts passed to add/register methods — missing required fields produce a Pydantic ValidationError that is not caught, surfacing raw stack traces."
+  ]
+}

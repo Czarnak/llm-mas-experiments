@@ -1,0 +1,62 @@
+2026-05-20 18:25:07,515 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.schemas
+2026-05-20 18:25:07,515 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.tables
+2026-05-20 18:25:07,515 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.types
+2026-05-20 18:25:07,515 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.constraints
+2026-05-20 18:25:07,515 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.defaults
+2026-05-20 18:25:07,515 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.comments
+2026-05-20 18:25:07,659 - SystemSimulation - INFO - Starting Crisis Transportation Management Multi-Agent System Simulation
+2026-05-20 18:25:07,659 - SystemSimulation - INFO - ======================================================
+2026-05-20 18:25:07,676 - SystemSimulation - INFO - Creating agent instances...
+2026-05-20 18:25:07,693 - SystemSimulation - INFO - Simulating crisis transportation workflow...
+2026-05-20 18:25:07,693 - SystemSimulation - INFO - 1. PersonInNeed reports resource need
+2026-05-20 18:25:07,696 - SystemSimulation - INFO -    Request stored: req_001
+2026-05-20 18:25:07,696 - SystemSimulation - INFO - 2. Helper offers materials
+2026-05-20 18:25:07,699 - SystemSimulation - INFO -    Available materials stored: mat_001
+2026-05-20 18:25:07,699 - SystemSimulation - INFO - 3. DataHandler matches request with materials
+2026-05-20 18:25:07,701 - SystemSimulation - INFO -    Match created: match_001
+2026-05-20 18:25:07,701 - SystemSimulation - INFO - 4. Notifier sends notification
+2026-05-20 18:25:07,701 - SystemSimulation - INFO -    Notification sent: notif_001
+2026-05-20 18:25:07,701 - SystemSimulation - INFO - 5. RoutePlanner creates route
+2026-05-20 18:25:07,701 - SystemSimulation - INFO -    Route created: route_001
+2026-05-20 18:25:07,701 - SystemSimulation - INFO - 6. TruckDriver provides location updates
+2026-05-20 18:25:07,702 - SystemSimulation - INFO -    Location update: loc_001
+2026-05-20 18:25:07,702 - SystemSimulation - INFO - 7. Services receives special notification
+2026-05-20 18:25:07,702 - SystemSimulation - INFO -    Special notification sent: spec_notif_001
+2026-05-20 18:25:07,702 - SystemSimulation - INFO - 
+Workflow simulation completed successfully!
+2026-05-20 18:25:07,702 - SystemSimulation - INFO - ======================================================
+2026-05-20 18:25:07,702 - SystemSimulation - INFO - Final database state:
+2026-05-20 18:25:07,702 - SystemSimulation - ERROR - Error during simulation: name 'datetime' is not defined
+2026-05-20 18:25:40,451 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.schemas
+2026-05-20 18:25:40,452 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.tables
+2026-05-20 18:25:40,452 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.types
+2026-05-20 18:25:40,452 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.constraints
+2026-05-20 18:25:40,452 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.defaults
+2026-05-20 18:25:40,452 - alembic.runtime.plugins - INFO - setup plugin alembic.autogenerate.comments
+2026-05-20 18:25:40,591 - SystemSimulation - INFO - Starting Crisis Transportation Management Multi-Agent System Simulation
+2026-05-20 18:25:40,592 - SystemSimulation - INFO - ======================================================
+2026-05-20 18:25:40,592 - SystemSimulation - INFO - Creating agent instances...
+2026-05-20 18:25:40,607 - SystemSimulation - INFO - Simulating crisis transportation workflow...
+2026-05-20 18:25:40,607 - SystemSimulation - INFO - 1. PersonInNeed reports resource need
+2026-05-20 18:25:40,617 - SystemSimulation - INFO -    Request stored: req_001
+2026-05-20 18:25:40,618 - SystemSimulation - INFO - 2. Helper offers materials
+2026-05-20 18:25:40,620 - SystemSimulation - INFO -    Available materials stored: mat_001
+2026-05-20 18:25:40,620 - SystemSimulation - INFO - 3. DataHandler matches request with materials
+2026-05-20 18:25:40,623 - SystemSimulation - INFO -    Match created: match_001
+2026-05-20 18:25:40,623 - SystemSimulation - INFO - 4. Notifier sends notification
+2026-05-20 18:25:40,623 - SystemSimulation - INFO -    Notification sent: notif_001
+2026-05-20 18:25:40,623 - SystemSimulation - INFO - 5. RoutePlanner creates route
+2026-05-20 18:25:40,623 - SystemSimulation - INFO -    Route created: route_001
+2026-05-20 18:25:40,623 - SystemSimulation - INFO - 6. TruckDriver provides location updates
+2026-05-20 18:25:40,623 - SystemSimulation - INFO -    Location update: loc_001
+2026-05-20 18:25:40,623 - SystemSimulation - INFO - 7. Services receives special notification
+2026-05-20 18:25:40,623 - SystemSimulation - INFO -    Special notification sent: spec_notif_001
+2026-05-20 18:25:40,623 - SystemSimulation - INFO - 
+Workflow simulation completed successfully!
+2026-05-20 18:25:40,623 - SystemSimulation - INFO - ======================================================
+2026-05-20 18:25:40,624 - SystemSimulation - INFO - Final database state:
+2026-05-20 18:25:40,625 - SystemSimulation - INFO - Requests: 1
+2026-05-20 18:25:40,625 - SystemSimulation - INFO - Available Materials: 1
+2026-05-20 18:25:40,625 - SystemSimulation - INFO - Matches: 1
+2026-05-20 18:25:40,625 - SystemSimulation - INFO - 
+System simulation completed successfully!

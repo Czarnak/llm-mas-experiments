@@ -1,0 +1,16 @@
+[
+  {
+    "id": "4",
+    "title": "System agentowy do wspomagania przemieszczania siępojazdów uprzywilejowanych",
+    "repo": "https://github.com/cncPomper/AASD-COOL.git",
+    "description": "Celem proponowanego systemu jest dynamiczne wspomaganie dojazdu pojazdówuprzywilejowanych (np. karetek, straży pożarnej) w warunkach miejskich, minimalizujączakłócenia w ruchu drogowym i poprawiając bezpieczeństwo uczestników ruchu. Systembędzie wykorzystywał technologię agentową, aby w czasie rzeczywistym reagować nazmienne warunki drogowe oraz interakcje między różnymi uczestnikami ruchu.",
+    "requirements": [
+      "System umożliwia rozpoczęcie trasy do punktu docelowego",
+      "Jego pozycja oraz pozycja zwykłych pojazdów jest na bieżąco odczytywana.",
+      "Wydarzenia losowe (wypadki, korki) są monitorowane.",
+      "Trasa jest dostosowywana do warunków.",
+      "Sygnalizacja świetlna jest monitorowana i dostosowuje się do trasy pojazdu.",
+      "Powiadamianie kierowców o zbliżającym się pojeździe:● Przez aplikacje● Dodatkowe wyświetlacze"
+    ]
+  }
+]

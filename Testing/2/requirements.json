@@ -1,0 +1,17 @@
+[
+  {
+    "id": "2",
+    "title": "System monitorowania i likwidacji infestacji karaluchów",
+    "repo": "https://gitlab-stud.elka.pw.edu.pl/ajurzyst/karaluchy-aasd.git",
+    "description": "Współczesne budynki mieszkalne o dużym zagęszczeniu użytkowników, takie jak akademiki, są szczególnie narażone na problem infestacji szkodników, w tym karaluchów. Zjawisko stanowi nie tylko problem higieniczny, ale również wpływa na komfort życia studentów oraz generuje koszty po stronie administracji budynku. Obecnie w akademikach stosowane metody zwalczania infestacji mają głównie charakter reaktywny — administracja podejmuje działania dopiero po otrzymaniu zgłoszenia od mieszkańców. Takie podejście prowadzi do opóźnień w eliminacji szkodników i sprzyja dalszemu rozprzestrzenianiu się kolonii.",
+    "requirements": [
+      "System musi być w stanie zidentyfikować obecność karaluchów wmonitorowanym obszarze za pomocą czujników ruchu.",
+      "Każdy czujnik lub urządzenie agentowe ma obowiązek regularnie przesyłać danedo systemu centralnego lub agenta koordynującego.",
+      "Przesyłane dane z czujników powinny obejmować informacje o liczbie wykrytychosobników, lokalizacji i czasie zdarzenia.",
+      "System powinien analizować napływające dane, zidentyfikować wzorcepojawiania się karaluchów.",
+      "System powinien wskazywać miejsca o największej aktywności, abyzoptymalizować działania likwidacyjne.",
+      "W przypadku wykrycia aktywności karaluchów system powinien powiadamiaćfirmę dezynsekcyjną, poszkodowanych studentów i administrację.",
+      "System powinien poinformować studentów o złym stanie w ich pokojach ipotrzebie poprawienia stanu."
+    ]
+  }
+]

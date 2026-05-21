@@ -1,0 +1,15 @@
+[
+  {
+    "id": "5",
+    "title": "RequestWory",
+    "repo": "https://gitlab-stud.elka.pw.edu.pl/gtopczew/aasd.git",
+    "description": "Proponowany system organizacji i informowania o transporcie w sytuacjach kryzysowych, takich jakpowódź, ma na celu zapewnienie skutecznego i sprawnego zarządzania transportem oraz komunikacją wobliczu zagrożeń. System ten składa się z kilku kluczowych komponentów, które współpracują ze sobą, aby minimalizować skutki kryzysów i wspierać mieszkańców.",
+    "requirements": [
+      "Zgłaszanie potrzeby zaopatrzenia o konkretne zasobyZgłaszanie chęci zapewnienia konkretnych zasobów",
+      "Dopasowywanie dostępnych zasobów do potrzebWyznaczanie optymalnych tras przejazduWyznaczanie alternatywnych tras przejazdu w razie wypadków losowych",
+      "Aktualizacja obecnej trasy w razie wypadków losowychZgłaszanie informacji o nieprzejezdnych drogachWysyłanie powiadomień dotyczących zagrożeń",
+      "Wysyłanie powiadomień dotyczących zmian w trasach transportowych",
+      "Wysyłanie specjalnych powiadomień dla słuzb porządkowych"
+    ]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "9",
+    "repo": "https://github.com/piotrszmurlo/seroid.git",
+    "repo_command": "git clone -b master --single-branch https://github.com/piotrszmurlo/seroid.git",
+    "title": "Seroid",
+    "description": "system, w którym inteligentne kontenery z czujnikamizapełnienia komunikują się autonomicznie z siecią śmieciarek, przekazując im informacje opotrzebie opróżnienia. Śmieciarki muszą się między sobą koordynować, aby ustalić, która znich jest najbliżej i może wykonać zadanie w danym momencie. Dzięki temu problemnadmiernych przejazdów, opóźnień w opróżnianiu kontenerów oraz niepotrzebnych operacjizostaje zminimalizowany, co skutkuje bardziej efektywnym systemem gospodarki odpadamioraz wyższą satysfakcją klientów.",
+    "requirements": [
+      "System umożliwia powiadomienie śmieciarki o konieczności opróżnienia konkretnegokontenera",
+      "System umożliwia wybór najbliższej niepełnej śmieciarki do danego zadania",
+      "System umożliwia monitorowanie zapełnienia kontenerów",
+      "System umożliwia monitorowanie stanu śmieciarek (zajęty, pełny, wolny)",
+      "System umożliwia terminowy wywóz śmieci (kontener nie może być zapełnionydłużej niż 1 dzień)",
+      "Śmieciarki bardziej zapełnione są prioretyzowane -> unikanie sytuacji gdy naglewszystkie śmieciarki są pełne i żadna nie może nic wywieźć"
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+crewai==1.14.5
+crewai-core==1.14.5
+openai==2.37.0
+pydantic==2.12.5

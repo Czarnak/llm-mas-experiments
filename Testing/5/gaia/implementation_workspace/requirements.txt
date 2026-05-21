@@ -1,0 +1,5 @@
+agentscope
+langchain
+pydantic
+fastapi
+uvicorn

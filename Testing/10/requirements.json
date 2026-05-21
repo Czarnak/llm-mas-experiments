@@ -1,0 +1,15 @@
+[
+  {
+    "id": "10",
+    "repo": "https://github.com/thai-chicken/aasd-thienly.git",
+    "title": "Thienly",
+    "description": "Jednym z czynników wpływających na decyzję o zakupie lub wynajmienieruchomości są planowane inwestycje i budowy w okolicy, które mogą zmienićcharakter regionu. Dodatkowo potencjalni nabywcy i wynajmujący chcieliby miećmożliwość porównania cen podobnych mieszkań, aby podejmować bardziejświadome decyzje. Cennym źródłem informacji są również opinie mieszkańców,które dostarczają wskazówek na temat poziomu bezpieczeństwa czy jakościlokalnych usług.Choć dostęp do tych danych jest możliwy, np. poprzez plany zagospodarowaniaprzestrzennego, opinie Google dotyczące miejsc w okolicy czy porównywanie cennieruchomości, wymaga to wielu kroków i przeszukiwania różnych stron. Brakzintegrowanego dostępu do tych informacji sprawia, że osoby szukającenieruchomości często działają „w ciemno”, co może prowadzić do późniejszychrozczarowań. Proponowane rozwiązanie zakłada stworzenie aplikacji, która na podstawie wybranejnieruchomości:- dostarczy informacje o planowanych inwestycjach,- sprawdzi opinie o okolicznych lokalach,- porówna ceny z innymi nieruchomościami o podobnym charakterze lubznajdującymi się w najbliższej okolicyPo zebraniu wszystkich niezbędnych danych użytkownik otrzyma podsumowanie wformie raportu.",
+    "requirements": [
+      "Umożliwia wyszukiwanie mieszkania przy użyciu jego adresu.",
+      "Dostarczy informacje o planowanych inwestycjach w okolicy mieszkania ze stronróżnych urzędów.",
+      "Sprawdza opinię o lokalach z usługami w okolicach mieszkania z różnychserwisów z opiniami.",
+      "Porównuje cenę mieszkania z innymi nieruchomościami o podobnymcharakterze lub znajdującymi się w najbliższej okolicy z różnych serwisów zofertami mieszkań.",
+      "Generuje podsumowanie informacji o danym mieszkaniu i jego okolicy w formieraportu."
+    ]
+  }
+]
