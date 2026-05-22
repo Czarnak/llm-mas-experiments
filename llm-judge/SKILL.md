@@ -40,9 +40,7 @@ JudgeReport {
 JudgeScores {
   requirements_fit:      int  # 0–10  How well the system addresses all stated requirements
   logical_consistency:   int  # 0–10  Internal coherence; no contradictions or gaps
-  component_coverage:    int  # 0–10  All required components/agents/services are present
-  interface_logic:       int  # 0–10  Communication, APIs, event flows are well-defined
-  implementation_alignment: int # 0–10  Code matches the described design (n/a → 5 for conceptual-only)
+  agent_communication_correctness: int  # 0–10  For multi-agent systems: communication logic is complete and correct
   overall:               int  # 0–10  Holistic score; not an arithmetic average
 }
 
@@ -116,7 +114,13 @@ Check the system as a whole, independent of individual requirements:
 **Component coverage** (agents / services / modules)
 - Does every required capability have a responsible component?
 - Are there orphaned components with no role?
-- For multi-agent systems: are agent roles justified and non-redundant?
+
+**Agent communication correctness** (for multi-agent systems)
+- Are agent roles justified and non-redundant?
+- Are all necessary communication paths between agents defined?
+- Are message formats and protocols specified?
+- Are error paths and fallbacks defined on interfaces?
+- Are there any communication paths that are undefined or ambiguous?
 
 **Interface logic** (communication / APIs / events)
 - Are all communication paths between components defined?
@@ -236,32 +240,14 @@ determine the recommendation.
 | 3–4   | Contradictions between components or stated goals |
 | 0–2   | System is internally incoherent |
 
-**component_coverage**
+**agent_communication_correctness**
 | Score | Meaning |
 |-------|---------|
-| 9–10  | All required components present and justified |
-| 7–8   | Mostly complete; one or two minor omissions |
-| 5–6   | Significant components missing or redundant |
-| 3–4   | Core components absent |
-| 0–2   | Coverage is severely incomplete |
-
-**interface_logic**
-| Score | Meaning |
-|-------|---------|
-| 9–10  | All interfaces defined; error paths covered |
-| 7–8   | Most interfaces defined; minor gaps in error handling |
-| 5–6   | Some interfaces undefined or contracts vague |
-| 3–4   | Major communication paths missing |
-| 0–2   | Interfaces are largely undefined |
-
-**implementation_alignment** (score 5 for conceptual-only)
-| Score | Meaning |
-|-------|---------|
-| 9–10  | Code fully matches design; no undocumented deviations |
-| 7–8   | Mostly aligned; minor deviations noted |
-| 5–6   | Noticeable divergence between design and code |
-| 3–4   | Significant parts of design not implemented or contradicted |
-| 0–2   | Implementation bears little resemblance to design |
+| 9–10  | Agents communicate accurately, completely, and consistently across all relevant scenarios. Messages follow the expected protocol, preserve necessary context, and enable reliable coordination without avoidable misunderstandings |
+| 7–8   | Agents exchange clear, relevant, and mostly complete information according to the expected protocol. Minor communication issues may occur but do not significantly affect task completion |
+| 5–6   | Agents communicate well enough for the main workflow to proceed, but some information loss, ambiguity, protocol deviations, or coordination issues occur in secondary scenarios or edge cases |
+| 3–4   | Agents exchange some relevant information, but messages are often incomplete, ambiguous, malformed, delayed, or inconsistent with the expected protocol, causing frequent coordination failures |
+| 0–2   | Agents fail to exchange necessary information, send incompatible or unusable messages, or misunderstand each other in ways that prevent the system from functioning correctly |
 
 **overall**
 A holistic score reflecting the system's readiness. Not an arithmetic average —
@@ -292,9 +278,7 @@ After completing all phases, produce:
   "scores": {
     "requirements_fit": 0,
     "logical_consistency": 0,
-    "component_coverage": 0,
-    "interface_logic": 0,
-    "implementation_alignment": 0,
+    "agent_communication_correctness": 0,
     "overall": 0
   },
   "findings": [
